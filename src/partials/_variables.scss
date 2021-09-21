@@ -1,0 +1,11 @@
+$border-width: 3px;
+$column-gap: 10px;
+$row-gap: 10px;
+
+@function get-variables-as-map {
+  @return (
+    border-width: $border-width,
+    column-gap: $column-gap,
+    row-gap: $row-gap
+  )
+}

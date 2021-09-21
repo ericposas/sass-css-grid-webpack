@@ -1,0 +1,79 @@
+@import './partials/variables';
+
+html,
+body {
+  font-family: 'Ubuntu';
+}
+
+.title {
+  margin: 20px;
+  font-size: 3rem;
+  font-weight: 700;
+  color: adjust-color(gray, $lightness: 30%);
+}
+
+.typography {
+}
+
+.grid-container.main-grid {
+  height: 95vh;
+  display: grid;
+  column-gap: $column-gap;
+  row-gap: map-get(get-variables-as-map(), row-gap);
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr;
+}
+
+.sub-grid {
+  row-gap: 20px;
+  column-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  //justify-items: center;
+  .grid-cell {
+     height: 80%;
+  }
+}
+
+.grid-cell {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  border-radius: 10px;
+  border: $border-width solid adjust-color(orange, $lightness: -10%);
+  background-color: orange;
+}
+
+.grid-item {
+  align-self: center;
+  justify-self: center;
+  font-size: 5rem;
+  font-weight: 800;
+  color: adjust-color(orange, $lightness: 30%);
+  filter: blur(1px);
+}
+
+.grid-container .grid-cell:nth-of-type(4) {
+  grid-column: 1 / span 3;
+  background-color: adjust-color(red, $hue: -30);
+  border-color: adjust-color(purple, $red: -50, $blue: +20);
+  border-width: $border-width;
+}
+
+.grid-container.main-grid .grid-cell:last-of-type:not(.sub-grid .grid-cell) {
+  grid-column: 1 / span 3;
+  background-color: blue;
+  border-width: $border-width;
+  border-color: adjust-color(adjust-color(blue, $lightness: 20%), $hue: +50);
+}
+
+/*
+.grid-cell:nth-of-type(2) {
+  height: 200px;
+  grid-column: 2 / span 2;
+  grid-row: 3;
+  background-color: green;
+  border-color: adjust-color(green, $lightness: -10%);
+}
+*/
